@@ -10,19 +10,21 @@ import Foundation
 class Network: ObservableObject {
     static var validUsers: [String] = ["cshort@gmail.com", "mtaylor@gmail.com", "oduke@gmail.com"] 
     @Published var needsAlert: Bool = false
+    @Published var isLoading: Bool = true
     @Published var users: [User] = [] {
         didSet{
             print("we're setting it")
         }
     }
 
-    func getUsers(with email: String)  async -> [User] {
+    func getUsers(with email: String)  async {
         if needsAlert {
             needsAlert = false 
         }
+        isLoading = true
         guard let url = URL(string: "https://vcp79yttk9.execute-api.us-east-1.amazonaws.com/messages/users/\(email)") else { fatalError("Missing URL") }
         let urlRequest = URLRequest(url: url)
-        var array = [User]()
+
         let dataTask =  URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             if let error = error {
                 self.needsAlert = true
@@ -33,11 +35,13 @@ class Network: ObservableObject {
             guard let response = response as? HTTPURLResponse else { return }
 
             if response.statusCode == 200 {
+                self.isLoading = false
                 guard let data = data else { return }
                 DispatchQueue.main.async {
                     do {
                         let decodedUsers = try JSONDecoder().decode([User].self, from: data)
                         print(decodedUsers)
+                        
                         self.users = decodedUsers
                     } catch let error {
                         print("Error decoding: ", error)
@@ -50,7 +54,7 @@ class Network: ObservableObject {
             }
         }
         dataTask.resume()
-        return users
+    
     }
     
     

@@ -10,6 +10,9 @@
 		A53613D02C22F4C7005203B9 /* MessagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53613CF2C22F4C7005203B9 /* MessagesViewModel.swift */; };
 		A53613D22C22FB7A005203B9 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53613D12C22FB7A005203B9 /* MessagesView.swift */; };
 		A53613D42C22FF8A005203B9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53613D32C22FF8A005203B9 /* HomeViewModel.swift */; };
+		A53613D92C23484D005203B9 /* ViewOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53613D82C23484D005203B9 /* ViewOptions.swift */; };
+		A53613DB2C23491C005203B9 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A53613DA2C23491C005203B9 /* Poppins-Regular.ttf */; };
+		A53613DD2C234937005203B9 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A53613DC2C234937005203B9 /* Poppins-Bold.ttf */; };
 		A5FE5E522C22E959007FD7CA /* RoomsToGoAssignmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FE5E512C22E959007FD7CA /* RoomsToGoAssignmentApp.swift */; };
 		A5FE5E542C22E959007FD7CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FE5E532C22E959007FD7CA /* ContentView.swift */; };
 		A5FE5E562C22E95A007FD7CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5FE5E552C22E95A007FD7CA /* Assets.xcassets */; };
@@ -43,8 +46,10 @@
 		A53613CF2C22F4C7005203B9 /* MessagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewModel.swift; sourceTree = "<group>"; };
 		A53613D12C22FB7A005203B9 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
 		A53613D32C22FF8A005203B9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		A53613D52C232C90005203B9 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
-		A53613D62C232C99005203B9 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		A53613D82C23484D005203B9 /* ViewOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewOptions.swift; sourceTree = "<group>"; };
+		A53613DA2C23491C005203B9 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		A53613DC2C234937005203B9 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		A53613DE2C2349AD005203B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A5FE5E4E2C22E959007FD7CA /* RoomsToGoAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoomsToGoAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5FE5E512C22E959007FD7CA /* RoomsToGoAssignmentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsToGoAssignmentApp.swift; sourceTree = "<group>"; };
 		A5FE5E532C22E959007FD7CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -94,6 +99,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		A53613D72C23483E005203B9 /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				A53613D82C23484D005203B9 /* ViewOptions.swift */,
+			);
+			path = Extras;
+			sourceTree = "<group>";
+		};
 		A5FE5E452C22E959007FD7CA = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +130,8 @@
 		A5FE5E502C22E959007FD7CA /* RoomsToGoAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				A53613DE2C2349AD005203B9 /* Info.plist */,
+				A53613D72C23483E005203B9 /* Extras */,
 				A53613CC2C22F489005203B9 /* ViewModel */,
 				A5FE5E812C22F046007FD7CA /* Model */,
 				A5FE5E7E2C22F029007FD7CA /* Network */,
@@ -158,8 +173,8 @@
 		A5FE5E7B2C22EEF2007FD7CA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				A53613D62C232C99005203B9 /* Poppins-Bold.ttf */,
-				A53613D52C232C90005203B9 /* Poppins-Regular.ttf */,
+				A53613DC2C234937005203B9 /* Poppins-Bold.ttf */,
+				A53613DA2C23491C005203B9 /* Poppins-Regular.ttf */,
 				A5FE5E7C2C22EF07007FD7CA /* Extensions.swift */,
 			);
 			path = Extensions;
@@ -285,8 +300,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A53613DB2C23491C005203B9 /* Poppins-Regular.ttf in Resources */,
 				A5FE5E592C22E95A007FD7CA /* Preview Assets.xcassets in Resources */,
 				A5FE5E562C22E95A007FD7CA /* Assets.xcassets in Resources */,
+				A53613DD2C234937005203B9 /* Poppins-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +333,7 @@
 				A5FE5E7D2C22EF07007FD7CA /* Extensions.swift in Sources */,
 				A53613D42C22FF8A005203B9 /* HomeViewModel.swift in Sources */,
 				A5FE5E802C22F039007FD7CA /* Network.swift in Sources */,
+				A53613D92C23484D005203B9 /* ViewOptions.swift in Sources */,
 				A53613D22C22FB7A005203B9 /* MessagesView.swift in Sources */,
 				A5FE5E832C22F052007FD7CA /* User.swift in Sources */,
 				A5FE5E522C22E959007FD7CA /* RoomsToGoAssignmentApp.swift in Sources */,
@@ -485,6 +503,9 @@
 				DEVELOPMENT_TEAM = A427BXWL87;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RoomsToGoAssignment/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -514,6 +535,9 @@
 				DEVELOPMENT_TEAM = A427BXWL87;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RoomsToGoAssignment/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

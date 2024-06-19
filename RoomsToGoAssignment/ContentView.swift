@@ -7,17 +7,6 @@
 
 import SwiftUI
 
-enum ViewOptions {
-    case messages
-    
-    @ViewBuilder func view(_ path: Binding<NavigationPath>, email: String) -> some View  {
-        switch self {
-        case .messages:
-            MessagesView(path: path, viewModel: MessagesViewModel(email: email))
-        }
-    }
-}
-
 
 struct ContentView: View {
     @StateObject var viewModel: HomeViewModel
@@ -35,6 +24,7 @@ struct ContentView: View {
                     .font(.largeText())
                 Text(String.enterMessage)
                     .font(.mediumText())
+                    .multilineTextAlignment(.center)
                 textfield
                 Spacer()
                 searchButton
