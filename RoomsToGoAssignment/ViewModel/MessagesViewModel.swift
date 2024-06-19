@@ -22,7 +22,7 @@ class MessagesViewModel: ObservableObject {
     @MainActor
     func getUsers() async {
         self.isLoading = true 
-        let _ = await network.getUsers(with: email)
+        await network.getUsers(with: email)
         print("NEXT")
      
     }

@@ -11,17 +11,15 @@ class Network: ObservableObject {
     static var validUsers: [String] = ["cshort@gmail.com", "mtaylor@gmail.com", "oduke@gmail.com"] 
     @Published var needsAlert: Bool = false
     @Published var isLoading: Bool = true
-    @Published var users: [User] = [] {
-        didSet{
-            print("we're setting it")
-        }
-    }
+    @Published var users: [User] = [] 
 
     func getUsers(with email: String)  async {
+        // redundant when used only once but just in case a user wants to log in to multiple accounts, we have everything being refreshed.
         if needsAlert {
             needsAlert = false 
         }
         isLoading = true
+        //
         guard let url = URL(string: "https://vcp79yttk9.execute-api.us-east-1.amazonaws.com/messages/users/\(email)") else { fatalError("Missing URL") }
         let urlRequest = URLRequest(url: url)
 
