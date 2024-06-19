@@ -52,6 +52,7 @@ extension String {
     static var callbackError = "There was an error retrieving your messages. Please try again later."
     static var loading = "Loading..."
     static var noMessages = "No messages"
+    static var goBack = "Go Back"
 }
 
 extension Font {

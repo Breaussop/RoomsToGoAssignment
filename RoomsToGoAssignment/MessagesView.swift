@@ -26,16 +26,17 @@ struct MessagesView: View {
             }
         }
         .alert(String.callbackError, isPresented: $needsAlert, actions: {
-            
+            Button(action: {path.removeLast()}){
+                Text(String.goBack)
+                    .font(.smallText())
+            }
         })
         .onReceive(viewModel.network.$needsAlert, perform: { needsAlert in
-            print("on receive is going")
             if needsAlert {
                 self.needsAlert = true
             }
         })
         .onReceive(viewModel.network.$users, perform: { users in
-            print("on receive is going")
             if users.count > 0{
                     for user in users {
                             self.viewModel.isLoading = false
