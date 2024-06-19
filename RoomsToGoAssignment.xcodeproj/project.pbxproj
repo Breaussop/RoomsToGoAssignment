@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A53613D02C22F4C7005203B9 /* MessagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53613CF2C22F4C7005203B9 /* MessagesViewModel.swift */; };
+		A53613D22C22FB7A005203B9 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53613D12C22FB7A005203B9 /* MessagesView.swift */; };
+		A53613D42C22FF8A005203B9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53613D32C22FF8A005203B9 /* HomeViewModel.swift */; };
 		A5FE5E522C22E959007FD7CA /* RoomsToGoAssignmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FE5E512C22E959007FD7CA /* RoomsToGoAssignmentApp.swift */; };
 		A5FE5E542C22E959007FD7CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FE5E532C22E959007FD7CA /* ContentView.swift */; };
 		A5FE5E562C22E95A007FD7CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5FE5E552C22E95A007FD7CA /* Assets.xcassets */; };
@@ -14,6 +17,9 @@
 		A5FE5E632C22E95B007FD7CA /* RoomsToGoAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FE5E622C22E95B007FD7CA /* RoomsToGoAssignmentTests.swift */; };
 		A5FE5E6D2C22E95B007FD7CA /* RoomsToGoAssignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FE5E6C2C22E95B007FD7CA /* RoomsToGoAssignmentUITests.swift */; };
 		A5FE5E6F2C22E95B007FD7CA /* RoomsToGoAssignmentUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FE5E6E2C22E95B007FD7CA /* RoomsToGoAssignmentUITestsLaunchTests.swift */; };
+		A5FE5E7D2C22EF07007FD7CA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FE5E7C2C22EF07007FD7CA /* Extensions.swift */; };
+		A5FE5E802C22F039007FD7CA /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FE5E7F2C22F039007FD7CA /* Network.swift */; };
+		A5FE5E832C22F052007FD7CA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FE5E822C22F052007FD7CA /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A53613CF2C22F4C7005203B9 /* MessagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewModel.swift; sourceTree = "<group>"; };
+		A53613D12C22FB7A005203B9 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
+		A53613D32C22FF8A005203B9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		A5FE5E4E2C22E959007FD7CA /* RoomsToGoAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoomsToGoAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5FE5E512C22E959007FD7CA /* RoomsToGoAssignmentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsToGoAssignmentApp.swift; sourceTree = "<group>"; };
 		A5FE5E532C22E959007FD7CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +53,9 @@
 		A5FE5E682C22E95B007FD7CA /* RoomsToGoAssignmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoomsToGoAssignmentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5FE5E6C2C22E95B007FD7CA /* RoomsToGoAssignmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsToGoAssignmentUITests.swift; sourceTree = "<group>"; };
 		A5FE5E6E2C22E95B007FD7CA /* RoomsToGoAssignmentUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsToGoAssignmentUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A5FE5E7C2C22EF07007FD7CA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A5FE5E7F2C22F039007FD7CA /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		A5FE5E822C22F052007FD7CA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +83,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A53613CC2C22F489005203B9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A53613CF2C22F4C7005203B9 /* MessagesViewModel.swift */,
+				A53613D32C22FF8A005203B9 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		A5FE5E452C22E959007FD7CA = {
 			isa = PBXGroup;
 			children = (
@@ -94,8 +115,13 @@
 		A5FE5E502C22E959007FD7CA /* RoomsToGoAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				A53613CC2C22F489005203B9 /* ViewModel */,
+				A5FE5E812C22F046007FD7CA /* Model */,
+				A5FE5E7E2C22F029007FD7CA /* Network */,
+				A5FE5E7B2C22EEF2007FD7CA /* Extensions */,
 				A5FE5E512C22E959007FD7CA /* RoomsToGoAssignmentApp.swift */,
 				A5FE5E532C22E959007FD7CA /* ContentView.swift */,
+				A53613D12C22FB7A005203B9 /* MessagesView.swift */,
 				A5FE5E552C22E95A007FD7CA /* Assets.xcassets */,
 				A5FE5E572C22E95A007FD7CA /* Preview Content */,
 			);
@@ -125,6 +151,30 @@
 				A5FE5E6E2C22E95B007FD7CA /* RoomsToGoAssignmentUITestsLaunchTests.swift */,
 			);
 			path = RoomsToGoAssignmentUITests;
+			sourceTree = "<group>";
+		};
+		A5FE5E7B2C22EEF2007FD7CA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A5FE5E7C2C22EF07007FD7CA /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A5FE5E7E2C22F029007FD7CA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A5FE5E7F2C22F039007FD7CA /* Network.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A5FE5E812C22F046007FD7CA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A5FE5E822C22F052007FD7CA /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +307,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A53613D02C22F4C7005203B9 /* MessagesViewModel.swift in Sources */,
 				A5FE5E542C22E959007FD7CA /* ContentView.swift in Sources */,
+				A5FE5E7D2C22EF07007FD7CA /* Extensions.swift in Sources */,
+				A53613D42C22FF8A005203B9 /* HomeViewModel.swift in Sources */,
+				A5FE5E802C22F039007FD7CA /* Network.swift in Sources */,
+				A53613D22C22FB7A005203B9 /* MessagesView.swift in Sources */,
+				A5FE5E832C22F052007FD7CA /* User.swift in Sources */,
 				A5FE5E522C22E959007FD7CA /* RoomsToGoAssignmentApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,6 +478,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RoomsToGoAssignment/Preview Content\"";
+				DEVELOPMENT_TEAM = A427BXWL87;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -450,6 +507,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RoomsToGoAssignment/Preview Content\"";
+				DEVELOPMENT_TEAM = A427BXWL87;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
