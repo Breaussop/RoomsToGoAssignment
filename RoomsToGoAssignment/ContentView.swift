@@ -32,12 +32,15 @@ struct ContentView: View {
             VStack(spacing: 16) {
                 logo
                 Text("Message Center")
+                    .font(.largeText())
                 Text("Enter your email to search for your messages")
+                    .font(.mediumText())
                 textfield
                 Spacer()
                 searchButton
                 
             }
+            .navigationTitle("")
             .onReceive(viewModel.$isSuccessfulLogin) { isSuccessful in
                 if isSuccessful {
                     path.append(ViewOptions.messages)
@@ -74,6 +77,9 @@ struct ContentView: View {
     
     var logo: some View {
         Image("RTGLogo")
+//            .resizable()
+//            .scaledToFit()
+//            .frame(width: UIScreen.screenWidth *)
     }
     
     var searchButton: some View {

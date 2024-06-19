@@ -43,6 +43,8 @@
 		A53613CF2C22F4C7005203B9 /* MessagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewModel.swift; sourceTree = "<group>"; };
 		A53613D12C22FB7A005203B9 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
 		A53613D32C22FF8A005203B9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		A53613D52C232C90005203B9 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		A53613D62C232C99005203B9 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		A5FE5E4E2C22E959007FD7CA /* RoomsToGoAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoomsToGoAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5FE5E512C22E959007FD7CA /* RoomsToGoAssignmentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsToGoAssignmentApp.swift; sourceTree = "<group>"; };
 		A5FE5E532C22E959007FD7CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -156,6 +158,8 @@
 		A5FE5E7B2C22EEF2007FD7CA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A53613D62C232C99005203B9 /* Poppins-Bold.ttf */,
+				A53613D52C232C90005203B9 /* Poppins-Regular.ttf */,
 				A5FE5E7C2C22EF07007FD7CA /* Extensions.swift */,
 			);
 			path = Extensions;

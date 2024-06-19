@@ -17,21 +17,31 @@ struct MessagesView: View {
     var body: some View {
         VStack {
             Text("Message Center")
+                .font(.mediumBoldText())
             ScrollView {
                 VStack {
-                    ForEach(self.viewModel.users) { user in
-                        let formattedDate = viewModel.dateStringToDate(dateString:user.date)
-                        HStack {
-                            Text(user.message)
-                                .padding()
-                            Text( formattedDate?.mmDDyyyySlash() ?? "" )
-                                .padding()
+                    if !viewModel.isLoading {
+                        ForEach(self.viewModel.users) { user in
+                            let formattedDate = viewModel.dateStringToDate(dateString:user.date)
+                            HStack {
+                                Text(user.message)
+                                    .font(.smallText())
+                                    .padding()
+                                Text( formattedDate?.mmDDyyyySlash() ?? "" )
+                                    .font(.smallText())
+                                    .padding()
+                            }
+                            .background(
+                                RoundedRectangle(cornerRadius: 16)
+                                    .fill(Color.searchBlue)
+                            )
+                            .padding()
                         }
-                        .background(
-                            RoundedRectangle(cornerRadius: 16)
-                                .fill(Color.searchBlue)
-                        )
-                        .padding()
+                    } else {
+                        Spacer()
+                        Text("Loading...")
+                            .font(.smallText())
+                        Spacer()
                     }
                 }
             }
@@ -59,6 +69,7 @@ struct MessagesView: View {
         .onReceive(viewModel.network.$users, perform: { users in
             print("on receive is going")
             for user in users {
+                self.viewModel.isLoading = false
                     self.viewModel.users.append(user)
                 
             }

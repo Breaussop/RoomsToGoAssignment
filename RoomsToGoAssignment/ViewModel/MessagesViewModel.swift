@@ -13,7 +13,7 @@ class MessagesViewModel: ObservableObject {
     
     var email: String = ""
     @Published var users: [User] = [User]()
-
+    @Published var isLoading: Bool = false
     
     init(email: String) {
         self.email = email 
@@ -21,7 +21,7 @@ class MessagesViewModel: ObservableObject {
     
 
     func getUsers() async {
-
+        self.isLoading = true 
         let _ = await network.getUsers(with: email)
         print("NEXT")
      

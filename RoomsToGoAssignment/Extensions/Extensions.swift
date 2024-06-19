@@ -48,3 +48,22 @@ extension String {
         return dateFormatter.date(from: dateString)
     }
 }
+
+extension Font {
+    
+    static func smallText() -> Font {
+        Font.custom("Poppins-Regular", size: 14)
+    }
+    
+    static func mediumText() -> Font {
+        Font.custom("Poppins-Regular", size: 16)
+    }
+    
+    static func largeText() -> Font {
+        Font.custom("Poppins-Regular", size: 24)
+    }
+    
+    static func mediumBoldText() -> Font {
+        Font.custom("Poppins-Regular", size: 16)
+    }
+}
