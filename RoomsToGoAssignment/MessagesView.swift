@@ -102,6 +102,7 @@ struct MessagesView: View {
         }
         .refreshable {
             Task {
+                // flushing the array or ensuring we're not duplicating messages by checking if its contained or not is a decision, i opted to choose flushing and starting fresh so better simulate a fresh new screen. Normally we would be keeping track of the placement and once scrolled to the end, make another request to load the even older messages
                 viewModel.users = [User]()
                 await viewModel.getUsers()
             }
