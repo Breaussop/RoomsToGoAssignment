@@ -31,9 +31,9 @@ struct ContentView: View {
         NavigationStack(path: $path) {
             VStack(spacing: 16) {
                 logo
-                Text("Message Center")
+                Text(String.center)
                     .font(.largeText())
-                Text("Enter your email to search for your messages")
+                Text(String.enterMessage)
                     .font(.mediumText())
                 textfield
                 Spacer()
@@ -49,7 +49,7 @@ struct ContentView: View {
             .navigationDestination(for: ViewOptions.self) {option in
                 option.view($path, email: enteredEmail)
             }
-            .alert("Email not found. Please try again.", isPresented: $viewModel.isInvalidEmail, actions: {
+            .alert(String.notValidEmailAlert, isPresented: $viewModel.isInvalidEmail, actions: {
                
             })
             .padding()
@@ -58,17 +58,21 @@ struct ContentView: View {
     }
     
     var textfield: some View {
-        TextField("Enter Email", text: $enteredEmail, onEditingChanged: { (isChanged) in
+        TextField(String.textfieldMessage, text: $enteredEmail, onEditingChanged: { (isChanged) in
             if isChanged {
-                if !hasWritten {
+                if !hasWritten && enteredEmail.count > 0 {
                     hasWritten = true
                 }
             }
         })
             .padding()
+            .overlay(
+                RoundedRectangle(cornerRadius: 16)
+                    .stroke(Color.black, lineWidth: 1)
+            )
             .overlay(alignment: .top) {
                 if !isValidEmail(enteredEmail) && hasWritten {
-                    Text("Please enter a valid email address")
+                    Text(String.needsValidEmail)
                         .foregroundStyle(.red)
                         .offset(y: -4 )
                 }
@@ -77,9 +81,6 @@ struct ContentView: View {
     
     var logo: some View {
         Image("RTGLogo")
-//            .resizable()
-//            .scaledToFit()
-//            .frame(width: UIScreen.screenWidth *)
     }
     
     var searchButton: some View {
@@ -90,7 +91,7 @@ struct ContentView: View {
             }
             
         }) {
-            Text("Search")
+            Text(String.search)
                 .foregroundStyle(.white)
                 .frame(width: UIScreen.screenWidth*0.85, height: UIScreen.screenHeight*0.06)
                 .background(

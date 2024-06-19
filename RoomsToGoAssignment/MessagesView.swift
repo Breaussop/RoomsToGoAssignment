@@ -17,8 +17,9 @@ struct MessagesView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Message Center")
+                Text(String.center)
                     .font(.mediumBoldText())
+                    .padding([.leading, .bottom])
                 Spacer()
             }
             .frame(width:UIScreen.screenWidth*0.95)
@@ -26,34 +27,43 @@ struct MessagesView: View {
             ScrollView {
                 VStack {
                     if !viewModel.isLoading {
-                        ForEach(self.viewModel.users, id: \.message) { user in
-                            let formattedDate = viewModel.dateStringToDate(dateString:user.date)
-                            HStack {
-                                Text(user.message)
-                                    .font(.smallText())
-                                    .padding()
-                                Spacer()
-                                Text( formattedDate?.mmDDyyyySlash() ?? "" )
-                                    .font(.smallText())
-                                    .padding()
+                        if viewModel.users.count > 0 {
+                            ForEach(self.viewModel.users, id: \.message) { user in
+                                let formattedDate = viewModel.dateStringToDate(dateString:user.date)
+                                HStack {
+                                    Text(user.message)
+                                        .font(.smallText())
+                                        .padding()
+                                    Spacer()
+                                    Text( formattedDate.mmDDyyyySlash() )
+                                        .font(.smallText())
+                                        .padding()
+                                }
+                                .frame(width:UIScreen.screenWidth*0.95)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 16)
+                                        .fill(Color.searchBlue)
+                                )
+                                .padding()
                             }
-                            .frame(width:UIScreen.screenWidth*0.95)
-                            .background(
-                                RoundedRectangle(cornerRadius: 16)
-                                    .fill(Color.searchBlue)
-                            )
-                            .padding()
+                        } else {
+                            Spacer()
+                            Text(String.noMessages)
+                                .font(.smallText())
+                            Spacer()
                         }
                     } else {
                         Spacer()
-                        Text("Loading...")
+                        Text(String.loading)
                             .font(.smallText())
                         Spacer()
                     }
                 }
             }
             .refreshable {
+                
                 Task {
+                    viewModel.users = [User]()
                     await viewModel.getUsers()
                 }
             }
@@ -61,10 +71,12 @@ struct MessagesView: View {
         .navigationTitle("")
         .onAppear {
             Task {
+                
                 await viewModel.getUsers()
+                
             }
         }
-        .alert("There was an error retrieving your messages. Please try again later.", isPresented: $needsAlert, actions: {
+        .alert(String.callbackError, isPresented: $needsAlert, actions: {
             
         })
         .onReceive(viewModel.network.$needsAlert, perform: { needsAlert in
@@ -75,17 +87,18 @@ struct MessagesView: View {
         })
         .onReceive(viewModel.network.$users, perform: { users in
             print("on receive is going")
-            if users.count > 0 {
-                for user in users {
-                    print("in my receive my user is \(user) with a message of \(user.message)")
-                    DispatchQueue.main.async {
-                        self.viewModel.isLoading = false
-                        self.viewModel.users.append(user)
+            if users.count > 0{
+                    for user in users {
+                        print("in my receive my user is \(user) with a message of \(user.message)")
+    //                    DispatchQueue.main.async {
+                            self.viewModel.isLoading = false
+                            self.viewModel.users.append(user)
+    //                    }
                     }
-                    
-                }
-                self.viewModel.users.sort(by: {viewModel.dateStringToDate(dateString: $0.date)?.compare(viewModel.dateStringToDate(dateString: $1.date) ?? Date()) == .orderedDescending })
+            } else {
+                self.viewModel.isLoading = false
             }
+                self.viewModel.users = self.viewModel.users.sorted(by: {viewModel.dateStringToDate(dateString: $0.date).compare(viewModel.dateStringToDate(dateString: $1.date)) == .orderedDescending })
         })
     }
 }

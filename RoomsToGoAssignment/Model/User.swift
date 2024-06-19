@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+// Perhaps naming this object Message and accessing the User.message property as Message.text would have been better
 struct User: Decodable, Identifiable {
     var id: Int?
     var name: String

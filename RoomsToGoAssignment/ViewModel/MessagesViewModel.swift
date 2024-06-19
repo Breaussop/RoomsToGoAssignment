@@ -13,13 +13,13 @@ class MessagesViewModel: ObservableObject {
     
     var email: String = ""
     @Published var users: [User] = [User]()
-    @Published var isLoading: Bool = false
+    @Published var isLoading: Bool = true
     
     init(email: String) {
         self.email = email 
     }
     
-
+    @MainActor
     func getUsers() async {
         self.isLoading = true 
         let _ = await network.getUsers(with: email)
@@ -27,11 +27,11 @@ class MessagesViewModel: ObservableObject {
      
     }
     
-     func dateStringToDate(dateString: String) -> Date? {
+     func dateStringToDate(dateString: String) -> Date {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale.autoupdatingCurrent
         dateFormatter.timeZone = TimeZone.current
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ"
-        return dateFormatter.date(from: dateString)
+         return dateFormatter.date(from: dateString) ?? Date()
     }
 }
