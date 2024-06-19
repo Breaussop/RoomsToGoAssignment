@@ -71,9 +71,7 @@ struct MessagesView: View {
         .navigationTitle("")
         .onAppear {
             Task {
-                
                 await viewModel.getUsers()
-                
             }
         }
         .alert(String.callbackError, isPresented: $needsAlert, actions: {
@@ -96,6 +94,7 @@ struct MessagesView: View {
     //                    }
                     }
             } else {
+                
                 self.viewModel.isLoading = false
             }
                 self.viewModel.users = self.viewModel.users.sorted(by: {viewModel.dateStringToDate(dateString: $0.date).compare(viewModel.dateStringToDate(dateString: $1.date)) == .orderedDescending })
