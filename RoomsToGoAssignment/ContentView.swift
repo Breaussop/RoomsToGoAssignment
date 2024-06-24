@@ -55,6 +55,7 @@ struct ContentView: View {
                 }
             }
         })
+        .font(.mediumBoldText())
             .padding()
             .overlay(
                 RoundedRectangle(cornerRadius: 16)
