@@ -16,7 +16,11 @@ struct MessagesView: View {
     @ViewBuilder
     var body: some View {
         VStack {
+            Divider()
+                .padding(.vertical)
             header
+            Divider()
+                .padding(.horizontal)
             scrollView
         }
         .navigationTitle("")
@@ -55,7 +59,7 @@ struct MessagesView: View {
             Spacer()
         }
         .frame(width:UIScreen.screenWidth*0.95)
-        .padding()
+        .padding(.vertical)
     }
     
     var scrollView: some View {
@@ -73,18 +77,16 @@ struct MessagesView: View {
                                     .textContentType(.oneTimeCode)
                                     .textInputAutocapitalization(.never)
                                     .autocorrectionDisabled(true)
-                                    .padding()
+                                    .padding(.horizontal)
                                 Spacer()
                                 Text( formattedDate.mmDDyyyySlash() )
                                     .font(.smallText())
-                                    .padding()
+                                    .padding(.horizontal)
                             }
                             .frame(width:UIScreen.screenWidth*0.95)
-                            .background(
-                                RoundedRectangle(cornerRadius: 16)
-                                    .fill(Color.searchBlue)
-                            )
-                            .padding()
+                            .padding(.vertical)
+                            Divider()
+                                .padding(.horizontal)
                         }
                     } else if !viewModel.network.isLoading {
                         Spacer()
