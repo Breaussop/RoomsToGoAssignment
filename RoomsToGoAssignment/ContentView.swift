@@ -56,18 +56,22 @@ struct ContentView: View {
             }
         })
         .font(.mediumBoldText())
-            .padding()
-            .overlay(
-                RoundedRectangle(cornerRadius: 16)
-                    .stroke(Color.black, lineWidth: 1)
-            )
-            .overlay(alignment: .top) {
-                if !isValidEmail(enteredEmail) && hasWritten {
-                    Text(String.needsValidEmail)
-                        .foregroundStyle(.red)
-                        .offset(y: -4 )
-                }
+        .keyboardType(.alphabet)
+        .textContentType(.oneTimeCode)
+        .textInputAutocapitalization(.never)
+        .autocorrectionDisabled(true)
+        .padding()
+        .overlay(
+            RoundedRectangle(cornerRadius: 16)
+                .stroke(Color.black, lineWidth: 1)
+        )
+        .overlay(alignment: .top) {
+            if !isValidEmail(enteredEmail) && hasWritten {
+                Text(String.needsValidEmail)
+                    .foregroundStyle(.red)
+                    .offset(y: -4 )
             }
+        }
     }
     
     var logo: some View {
