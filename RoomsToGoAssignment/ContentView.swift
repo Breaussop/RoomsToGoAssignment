@@ -55,7 +55,7 @@ struct ContentView: View {
                 }
             }
         })
-        .font(.mediumBoldText())
+        .font(.mediumText())
         .keyboardType(.alphabet)
         .textContentType(.oneTimeCode)
         .textInputAutocapitalization(.never)
